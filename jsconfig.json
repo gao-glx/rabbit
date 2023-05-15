@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "src/*" //只是作为提示，在vite.config
+      ]
+    }
+  }
+}
