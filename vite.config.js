@@ -12,17 +12,30 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 export default defineConfig({
   plugins: [
     vue(),
-
     AutoImport({
       resolvers: [ElementPlusResolver()], // element-plus
     }),
     Components({
-      resolvers: [ElementPlusResolver()], // element-plus
-    })
+      resolvers: [ElementPlusResolver({ importStyle: "sass" })], // element-plus
+    }),
+    // // 按需定制主题配置
+    // ElementPlus({
+    //   useSource: true,
+    // }),
   ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)) //实际的路径转换
+    }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // 自动导入定制化样式文件进行样式覆盖
+        additionalData: `
+          @use "@/styles/element/index.scss" as *;
+        `,
+      }
     }
   }
 })
