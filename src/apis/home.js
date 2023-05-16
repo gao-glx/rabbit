@@ -17,5 +17,7 @@ export const findNewAPI = () => {
 }
 
 export const getHotAPI = () => {
-  return httpInstance('home/hot', 'get', {})
+  return httpInstance({
+    url: 'home/hot'
+  })
 }
