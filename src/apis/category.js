@@ -8,3 +8,12 @@ export function findTopCategoryAPI(id) {
     }
   })
 }
+
+export const getCategoryAPI = (id) => {
+  return request({
+    url: '/category',
+    params: {
+      id
+    }
+  })
+}

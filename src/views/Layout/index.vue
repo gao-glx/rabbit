@@ -3,7 +3,8 @@
     <LayoutFixed />
     <LayoutNav />
     <LayoutHeader />
-    <RouterView />
+    <!-- 添加key 复用机制 :key="$route.fullPath"-->
+    <RouterView :key="$route.fullPath" />
     <LayoutFooter />
   </div>
 </template>
