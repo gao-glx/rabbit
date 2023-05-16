@@ -1,3 +1,3 @@
 <template>
-  <div>home</div>
+  <div style="height:1300px">home</div>
 </template>
