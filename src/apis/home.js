@@ -1,11 +1,13 @@
 import httpInstance from "@/utils/http";
 //轮播图API
-export function getBannerAPI() {
+export function getBannerAPI(paramas = {}) {
+  // 默认1 商品2
+  const { distributionSite = '1' } = paramas
   return httpInstance({
     url: 'home/banner',
-    // pramas: {
-    //   distributionSite: ""
-    // }
+    paramas: {
+      distributionSite
+    }
   })
 }
 
@@ -19,5 +21,11 @@ export const findNewAPI = () => {
 export const getHotAPI = () => {
   return httpInstance({
     url: 'home/hot'
+  })
+}
+
+export const getGoodsAPI = () => {
+  return httpInstance({
+    url: '/home/goods'
   })
 }
