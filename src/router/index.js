@@ -31,6 +31,12 @@ const router = createRouter({
     }
 
   ]//配置path和component对应关系的位置
+  // 滚动路由定制
+  , scrollBehavior() {
+    return {
+      top: 0
+    }
+  }
 })
 
 export default router
