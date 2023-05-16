@@ -12,7 +12,7 @@
         <li class="home">
           <RouterLink to="/">首页</RouterLink>
         </li>
-        <li class="" v-for="item in categoryList" :key="item.id">
+        <li class="" v-for="item in categoryStore.categoryList" :key="item.id">
           <RouterLink to="/">{{ item.name }}</RouterLink>
         </li>
 
@@ -29,18 +29,16 @@
 </template>
 
 <script setup>
-import { getCategoryAPI } from '@/apis/layout';
-import {onMounted, ref} from 'vue'
 
-let categoryList = ref([])
-const getCategory = async ()=>{
-  const res = await getCategoryAPI()
-  categoryList.value = res.result
-  console.log(categoryList)
-  }
-
-onMounted(() => getCategory())    //为什么使用箭头函数调用有显示
-
+import {useCategoryStore} from '@/stores/category.js'
+// let categoryList = ref([])
+// const getCategory = async ()=>{
+//   const res = await getCategoryAPI()
+//   categoryList.value = res.result
+//   console.log(categoryList)
+//   }
+// onMounted(() => getCategory())    //为什么使用箭头函数调用有显示
+const categoryStore = useCategoryStore()
 </script>
 
 <style scoped lang='scss'>
