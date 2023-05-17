@@ -1,7 +1,3 @@
-<script setup>
-
-</script>
-
 <template>
   <header class='app-header'>
     <div class="container">
@@ -22,7 +18,7 @@
         <input type="text" placeholder="搜一搜">
       </div>
       <!-- 头部购物车 -->
-
+      <HandleCart />
 
     </div>
   </header>
@@ -30,7 +26,8 @@
 
 <script setup>
 
-import {useCategoryStore} from '@/stores/category.js'
+import { useCategoryStore } from '@/stores/category.js'
+import HandleCart from './HandleCart.vue'
 // let categoryList = ref([])
 // const getCategory = async ()=>{
 //   const res = await getCategoryAPI()
