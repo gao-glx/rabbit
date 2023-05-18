@@ -2,7 +2,9 @@
 import { defineStore } from 'pinia'
 import { loginAPI } from '@/apis/uesr.js'
 import { ref } from 'vue'
+import { useCartStore } from './cartStore'
 export const useUserStore = defineStore('user', () => {
+  const cartStore = useCartStore()
   // 1.定义数据
   const userInfo = ref({
     // account: '18610848230',
@@ -16,6 +18,7 @@ export const useUserStore = defineStore('user', () => {
   }
   const clearUserInfo = () => {
     userInfo.value = {}
+    cartStore.clearCart()
   }
   // 3.以对象的格式把state和action return
   return {

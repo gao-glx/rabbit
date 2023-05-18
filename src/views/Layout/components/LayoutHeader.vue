@@ -26,7 +26,7 @@
 
 <script setup>
 
-import { useCategoryStore } from '@/stores/category.js'
+import { useCategoryStore } from '@/stores/categoryStore';
 import HandleCart from './HandleCart.vue'
 // let categoryList = ref([])
 // const getCategory = async ()=>{
